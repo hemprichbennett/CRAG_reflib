@@ -10,8 +10,6 @@ library(taxize)
 library(dplyr)
 library(here)
 library(magrittr)
-library(bold)
-#library(lubridate)
 
 args <- as.character(commandArgs(trailingOnly = TRUE))
 
