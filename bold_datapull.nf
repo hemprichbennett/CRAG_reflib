@@ -1,4 +1,4 @@
-
+#!/usr/bin/env nextflow
 getname_path = './scripts/bold_getnames.R'
 getname_script = file(getname_path)
 
@@ -6,7 +6,9 @@ getdata_path = './scripts/bold_getdata.R'
 getdata_script = file(getdata_path)
 
 process bold_getnames {
-
+  executor='slurm'
+  queue='short'
+  memory = '1G'
   input:
   file getname_script
 
@@ -21,6 +23,10 @@ process bold_getnames {
 
 
 process query_bold {
+  executor='slurm'
+  queue='long'
+  memory = '1G'
+  time= '2days'
   input:
   file taxa from taxa_ch.flatten()
   file getdata_script
