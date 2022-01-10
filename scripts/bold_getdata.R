@@ -55,7 +55,7 @@ makefasta_function <- function(thedataframe, kingdomname){
 }
 
 
-base_outdir <- paste0(here('data', 'reference_library', 'tidybug', format(Sys.Date(), '%Y-%m')))
+base_outdir <- paste0(here('data', 'tidybug', format(Sys.Date(), '%Y-%m')))
 dir.create(base_outdir)
 outdir <- paste0(base_outdir, '/bold_files')
 dir.create(outdir)

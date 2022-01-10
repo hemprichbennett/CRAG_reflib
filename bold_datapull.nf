@@ -1,8 +1,8 @@
 
-getname_path = './scripts/ref_library/bold_getnames.R'
+getname_path = './scripts/bold_getnames.R'
 getname_script = file(getname_path)
 
-getdata_path = './scripts/ref_library/bold_getdata.R'
+getdata_path = './scripts/bold_getdata.R'
 getdata_script = file(getdata_path)
 
 process bold_getnames {
