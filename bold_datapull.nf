@@ -7,7 +7,7 @@ getdata_script = file(getdata_path)
 
 process bold_getnames {
   executor='slurm'
-  queue='short'
+  queue='medium'
   memory = '1G'
   input:
   file getname_script
@@ -27,6 +27,7 @@ process query_bold {
   queue='long'
   memory = '1G'
   time= '2days'
+  errorStrategy 'retry'
   input:
   file taxa from taxa_ch.flatten()
   file getdata_script
