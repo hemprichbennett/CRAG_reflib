@@ -28,6 +28,7 @@ process query_bold {
   memory = '1G'
   time= '2days'
   errorStrategy 'retry'
+  maxRetries 5
   input:
   file taxa from taxa_ch.flatten()
   file getdata_script
