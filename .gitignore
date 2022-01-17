@@ -3,3 +3,6 @@
 **.*jpg
 **.*jpeg
 .Rproj.user
+work/
+data/tidybug/2022-*
+.nextflow*
