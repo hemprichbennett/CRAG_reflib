@@ -29,7 +29,7 @@ process query_bold {
   time= '2days'
   errorStrategy 'retry'
   maxRetries 15
-  queueSize = 10
+  queueSize = 5
   input:
   file taxa from taxa_ch.flatten()
   file getdata_script
