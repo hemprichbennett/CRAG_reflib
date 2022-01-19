@@ -12,5 +12,5 @@
 
 
 source activate $DATA/CRAG_reflib
-nextflow bold_datapull.nf
+nextflow bold_datapull.nf -profile cluster
 
