@@ -8,6 +8,7 @@ getdata_script = file(getdata_path)
 process bold_getnames {
   queue='medium'
   memory = '1G'
+  errorStrategy 'retry'
   maxRetries 15
   input:
   file getname_script
