@@ -1,0 +1,11 @@
+profiles {
+
+    standard {
+        process.executor = 'local'
+    }
+
+    cluster {
+        process.executor = 'slurm'
+    }
+
+}
