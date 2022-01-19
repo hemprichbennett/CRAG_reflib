@@ -6,9 +6,10 @@ getdata_path = './scripts/bold_getdata.R'
 getdata_script = file(getdata_path)
 
 process bold_getnames {
-  executor='slurm'
+  executor='local'
   queue='medium'
   memory = '1G'
+  maxRetries 15
   input:
   file getname_script
 
@@ -23,7 +24,7 @@ process bold_getnames {
 
 
 process query_bold {
-  executor='slurm'
+  executor='local'
   queue='long'
   memory = '1G'
   time= '2days'
