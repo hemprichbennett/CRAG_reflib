@@ -6,7 +6,7 @@ getdata_path = './scripts/bold_getdata.R'
 getdata_script = file(getdata_path)
 
 process bold_getnames {
-  queue='medium'
+  queue='short'
   memory = '1G'
   errorStrategy 'retry'
   maxRetries 15
