@@ -2,10 +2,13 @@ profiles {
 
     standard {
         process.executor = 'local'
+        process.container = 'hemprichbennett/craginformatics'
     }
 
     cluster {
         process.executor = 'slurm'
+        process.container = 'craginformatics.img'
+        singularity.enabled = true
     }
 
 }
