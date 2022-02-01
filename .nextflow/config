@@ -7,7 +7,7 @@ profiles {
 
     cluster {
         process.executor = 'slurm'
-        process.container = 'craginformatics.img'
+        process.container = 'hemprichbennett/craginformatics'
         singularity.enabled = true
     }
 
