@@ -5,4 +5,6 @@
 .Rproj.user
 work/
 data/tidybug/2022-*
-.nextflow*
+.nextflow.log*
+.nextflow/cache/*
+.nextflow/history
