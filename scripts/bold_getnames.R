@@ -18,7 +18,7 @@ out_path <- args[1]
 print(out_path)
 
 # I'm interested to see what our IP is and if it's being blocked
-system("ip addr > ~/ipinfo.txt", intern=TRUE)
+system("ip -4 -c -o address > ~/ipinfo.txt", intern=TRUE)
 
 
 otherAnmlNames <- c("Acanthocephala","Acoelomorpha","Brachiopoda",
