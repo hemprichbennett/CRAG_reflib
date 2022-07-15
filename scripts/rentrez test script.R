@@ -7,16 +7,19 @@ term<-read.csv(file = "test1.csv", header=F)
 
 
 #use the search term to find record numbers
-p.snps <- sapply(term$V1, entrez_search, db = "nucleotide", usehistory = "y", simplify = FALSE, api_key ="28ad5b35e515c1371d7652a210c2784d7608", retmax=200 )
+p.snps <- sapply(term, entrez_search, db = "nucleotide", usehistory = "y", simplify = FALSE, api_key ="28ad5b35e515c1371d7652a210c2784d7608", retmax=200 )
 
 
 ids <- lapply(p.snps, "[[", "ids")
 stackedids<-stack(ids)
 names(ids) <- seq_along(ids)
 
-ids<-as.vector(ids)
+#using just Bovidae 16s search term
+#ids<-as.vector(ids)
 ids<-as.numeric(ids$`1`)
 
+#creating the id vector with all family 16s (limited to 200 per family)
+ids<-as.numeric(stackedids$values)
 
 
 #pulling sequences from our ids
@@ -24,6 +27,7 @@ allrecs<- entrez_fetch(db="nuccore", id=ids, rettype="fasta", api_key ="28ad5b35
 
 class(allrecs)
 nchar(allrecs)
+#pulling the top sequence 
 cat(strwrap(substr(allrecs, 1, 500)), sep="\n")
 allrecs
 
